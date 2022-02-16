@@ -12,6 +12,9 @@ const factorial = (n) => {
 console.log(factorial(4));
 
 const fact_iter = (n) => {
+  if (n < 0 || n > 12) {
+    throw new RangeError("error");
+  }
   let result = n;
   if (n <= 1) {
     return 1;
@@ -22,4 +25,4 @@ const fact_iter = (n) => {
   }
   return result;
 };
-//console.log(fact_iter(20));
+console.log(fact_iter(12));
