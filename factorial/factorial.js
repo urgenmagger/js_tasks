@@ -5,11 +5,11 @@ const factorial = (n) => {
   if (n === 1 || n == 0) {
     return 1;
   } else {
-    console.log(n);
+    console.log("recursion", n);
     return n * factorial(n - 1);
   }
 };
-console.log(factorial(4));
+console.log(factorial(3));
 
 const fact_iter = (n) => {
   let result = n;
@@ -19,7 +19,16 @@ const fact_iter = (n) => {
   while (n > 1) {
     n--;
     result *= n;
+    console.log("iteration", n);
   }
   return result;
 };
-//console.log(fact_iter(20));
+console.log(fact_iter(10));
+
+const fact_tco = (n, acc = 1) => {
+  if (n === 0) {
+    return acc;
+  }
+  return factorial(n - 1, n * acc);
+};
+console.log(fact_tco(10));
